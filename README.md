@@ -19,7 +19,7 @@
 ## Introduction
 
 This repository contains PoC implementation of the https://link.springer.com/chapter/10.1007/978-3-031-09076-9_21.
-2D detector and tracker based on https://github.com/mikel-brostrom/Yolov5_StrongSORT_OSNet.
+3D detection works on the top of https://github.com/mikel-brostrom/Yolov5_StrongSORT_OSNet.
 
 
 ## Before you run the tracker
