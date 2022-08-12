@@ -22,15 +22,11 @@ This repository contains PoC implementation of the https://link.springer.com/cha
 3D detection works on the top of https://github.com/mikel-brostrom/Yolov5_StrongSORT_OSNet.
 
 
-## Before you run the tracker
+## To run the 3D tracker
 
-1. Clone the repository recursively:
-
-`git clone --recurse-submodules git@github.com:DmitriyZhuravlev/Lifting-2D-object-detection-to-3D-in-BEV.git`
-
-If you already cloned and forgot to use `--recurse-submodules` you can run `git submodule update --init`
-
+1. git clone --recurse-submodules git@github.com:DmitriyZhuravlev/Lifting-2D-object-detection-to-3D-in-BEV.git
 2. pip install -r requirements.txt
+3. python track_3d.py --classes 2 3 7 --conf-thres 0.7
 
 
 ## Cite
