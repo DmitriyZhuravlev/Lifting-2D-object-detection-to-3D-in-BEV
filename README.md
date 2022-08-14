@@ -6,7 +6,7 @@
 
 <div align="center">
 <p>
-<img src="img/Embed.png" width="440"/> <img src="img/Pexels Videos 2053100_850_400.gif" width="500"/> 
+<img src="img/Embed.png" width="440"/> <img src="img/result_500.gif" width="500"/> 
 </p>
 <br>
 <div>

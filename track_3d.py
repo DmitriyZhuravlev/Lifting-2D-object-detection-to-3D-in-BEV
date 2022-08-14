@@ -270,8 +270,8 @@ def run(
                             if rectangle is not None:
                                 color=colors( c, True )
                                 if debug:
-                                    annotator.box_label(bboxes, label, cv_colors.RED.value)
-                                annotator.draw_cube(lower_face, upper_face, cv_colors.BLUE.value)
+                                    annotator.box_label(bboxes, label, color)
+                                annotator.draw_cube(lower_face, upper_face, color)
                                 annotator.draw_bottom(rectangle, color)
                             else:
                                 annotator.box_label(bboxes, label, color)
