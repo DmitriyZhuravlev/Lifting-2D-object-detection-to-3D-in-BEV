@@ -152,7 +152,6 @@ def run(
             continue
         if debug and max_debug_index < frame_idx:
             break
-
         # if 10 < frame_idx:
             # break
 
@@ -202,7 +201,11 @@ def run(
             s += '%gx%g ' % im.shape[2:]  # print string
             imc = im0.copy() if save_crop else im0  # for save_crop
 
-            annotator = Annotator(im0, img_bev_empty, line_width=5, pil=not ascii)
+
+            bev = transform(im0, persp_mat)
+            bev = cv2.addWeighted(bev, 0.3, img_bev_empty, 0.7, 0)
+
+            annotator = Annotator(im0, bev, line_width=5, pil=not ascii)
             if cfg.STRONGSORT.ECC:  # camera motion compensation
                 strongsort_list[i].tracker.camera_update(prev_frames[i], curr_frames[i])
 
@@ -225,10 +228,6 @@ def run(
                 t5 = time_sync()
                 dt[3] += t5 - t4
 
-                if debug:
-                    bev = transform( im0, persp_mat )
-                else:
-                    bev = None
                 # draw boxes for visualization
                 if len(outputs[i]) > 0:
                     for j, (output, conf) in enumerate(zip(outputs[i], confs)):
@@ -271,8 +270,8 @@ def run(
                             if rectangle is not None:
                                 color=colors( c, True )
                                 if debug:
-                                    annotator.box_label(bboxes, label, color)
-                                annotator.draw_cube(lower_face, upper_face, color)
+                                    annotator.box_label(bboxes, label, cv_colors.RED.value)
+                                annotator.draw_cube(lower_face, upper_face, cv_colors.BLUE.value)
                                 annotator.draw_bottom(rectangle, color)
                             else:
                                 annotator.box_label(bboxes, label, color)
@@ -384,6 +383,7 @@ if __name__ == "__main__":
     #3840
     persp_mat, inv_mat = get_mat()
 
-    img_bev_empty = cv2.imread('./img/test_frame_empty_bev.png')
+    img_empty = cv2.imread('img/test_frame_empty.png')
+    img_bev_empty = transform(img_empty, persp_mat)
 
     main(opt)

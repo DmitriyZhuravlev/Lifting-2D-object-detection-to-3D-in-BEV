@@ -22,8 +22,8 @@ IMAGE_W = 8160
 pixels_in_mm = None
 
 debug = False
-max_debug_index = 141
-min_debug_index = 0
+max_debug_index = 300
+min_debug_index = 200
 
 thikness = 20
 
@@ -459,8 +459,7 @@ def get_mat():
 def transform(img, mat):
     dim = (IMAGE_W, IMAGE_H)
     return cv2.warpPerspective(
-        img, mat, dim
-    )  # , flags=cv2.INTER_CUBIC )  # , borderMode = cv2.BORDER_REPLICATE)
+        img, mat, dim, flags=cv2.INTER_CUBIC , borderMode = cv2.BORDER_REPLICATE)
 
 
 def hconcat_resize(img_list, interpolation=cv2.INTER_CUBIC):

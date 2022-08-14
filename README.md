@@ -6,8 +6,10 @@
 
 <div align="center">
 <p>
-<img src="img/Pexels Videos 2053100_720.gif" width="800"/> 
+<img src="img/Embed.png" width="400"/> <img src="img/Pexels Videos 2053100_850_400.gif" width="400"/> 
 </p>
+<br>
+<div>
 <br>
 
  
