@@ -36,7 +36,7 @@ This repository contains PoC implementation of the https://link.springer.com/cha
 If you find this project useful in your research, please consider cite:
 
 ```latex
-@misc{yolov5-strongsort-osnet-2022,
+@misc{lifting-bev,
     title={Lifting-2D-object-detection-to-3D-in-BEV},
     author={Dmitriy Zhuravlev},
     howpublished = {\url{https://github.com/DmitriyZhuravlev/Lifting-2D-object-detection-to-3D-in-BEV}},
